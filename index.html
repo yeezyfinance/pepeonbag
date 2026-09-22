@@ -4,42 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PEPE ON BAG</title>
-  <meta name="description" content="The bag is the costume. The bag is the coin. Halloween, but make it on-chain." />
+  <meta name="description" content="Halloween costume. On-chain trick. No eye holes." />
   <meta property="og:title" content="PEPE ON BAG" />
-  <meta property="og:description" content="Wear the bag. Don't look through it. Join the telegram." />
+  <meta property="og:description" content="Wear the bag. Buy the bag. Don't look through it." />
   <meta property="og:image" content="pepe-bag.jpg" />
-  <meta name="theme-color" content="#e8d4a8" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👜</text></svg>" />
+  <meta name="theme-color" content="#140c08" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎃</text></svg>" />
   <style>
     :root {
-      --cream: #ead7b0;
-      --cream-deep: #dcc191;
-      --kraft: #c4a06a;
-      --paper: #f4e6c4;
-      --ink: #16120c;
-      --ink-soft: #3a3226;
-      --bag: #b08958;
+      --night: #120b07;
+      --night-2: #1c100a;
+      --bone: #f2dfc0;
+      --kraft: #c49255;
+      --pumpkin: #ff6b1a;
+      --pumpkin-dim: #c44a0d;
+      --ink: #1a120c;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html, body {
-      min-height: 100%;
-      background: var(--cream);
-      color: var(--ink);
-      font-family: "Courier New", Courier, ui-monospace, monospace;
-    }
+    html, body { min-height: 100%; }
 
     body {
       background:
-        radial-gradient(1200px 600px at 50% -10%, rgba(255, 244, 214, 0.7), transparent 55%),
-        var(--cream);
+        radial-gradient(900px 520px at 50% -8%, rgba(255, 107, 26, 0.18), transparent 58%),
+        radial-gradient(700px 400px at 110% 110%, rgba(196, 74, 13, 0.16), transparent 50%),
+        var(--night);
+      color: var(--bone);
+      font-family: "Libre Baskerville", Georgia, serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.09;
+      background-image:
+        radial-gradient(circle at 20% 30%, #fff 0.6px, transparent 0.7px),
+        radial-gradient(circle at 80% 70%, #fff 0.5px, transparent 0.6px);
+      background-size: 18px 18px, 22px 22px;
+      z-index: 0;
     }
 
     .wrap {
-      max-width: 720px;
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
       margin: 0 auto;
-      padding: 18px 18px 48px;
+      padding: 16px 16px 56px;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -50,32 +66,33 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: center;
       gap: 12px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .brand {
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      font-size: 13px;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
+      color: var(--kraft);
     }
 
     .tg {
-      color: var(--ink);
+      color: var(--pumpkin);
       text-decoration: none;
-      border-bottom: 1px solid var(--ink);
-      font-size: 13px;
-      letter-spacing: 0.04em;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--pumpkin);
     }
 
-    .tg:hover { opacity: 0.65; }
-
     .hero {
-      width: min(92vw, 560px);
+      width: min(92vw, 520px);
       aspect-ratio: 1 / 1;
-      margin: 8px 0 22px;
+      margin: 10px 0 18px;
       position: relative;
     }
 
@@ -83,53 +100,77 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 50% 18%;
+      object-position: 50% 16%;
       display: block;
-      border: 1px solid #8b6b3d;
-      box-shadow: 0 18px 40px rgba(80, 50, 10, 0.18);
-      background: var(--cream-deep);
+      border: 2px solid #6b3d16;
+      box-shadow:
+        0 0 0 1px rgba(255, 107, 26, 0.25),
+        0 24px 50px rgba(0, 0, 0, 0.45),
+        0 0 40px rgba(255, 107, 26, 0.12);
+    }
+
+    .badge {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      background: var(--night);
+      color: var(--pumpkin);
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 6px 8px;
+      border: 1px solid var(--pumpkin-dim);
     }
 
     h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(28px, 7vw, 48px);
-      letter-spacing: 0.04em;
+      font-family: "Creepster", cursive;
+      font-size: clamp(42px, 13vw, 84px);
+      line-height: 0.86;
       text-align: center;
-      font-weight: 700;
-      line-height: 1;
+      color: var(--pumpkin);
+      text-shadow: 0 3px 0 #4a1c05, 0 10px 24px rgba(0, 0, 0, 0.45);
+      letter-spacing: 0.02em;
+      font-weight: 400;
     }
 
-    .tag {
-      margin-top: 10px;
+    .sub {
+      margin-top: 12px;
       text-align: center;
-      font-size: 13px;
-      line-height: 1.55;
-      color: var(--ink-soft);
-      max-width: 36em;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--bone);
+      max-width: 22em;
+      line-height: 1.45;
     }
 
     .hint {
       margin-top: 8px;
       text-align: center;
-      font-size: 12px;
-      color: #6b5738;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--kraft);
       max-width: 34em;
+      line-height: 1.6;
     }
 
     .ca-box {
       margin-top: 26px;
       width: 100%;
-      max-width: 560px;
-      border: 1px dashed #8b6b3d;
-      background: rgba(244, 230, 196, 0.55);
-      padding: 14px 14px 12px;
+      max-width: 520px;
+      background: rgba(28, 16, 10, 0.72);
+      border: 1px solid #6b3d16;
+      padding: 14px;
     }
 
     .ca-label {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 10px;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
-      color: #6b5738;
+      color: var(--pumpkin);
       margin-bottom: 8px;
     }
 
@@ -141,60 +182,72 @@
 
     #ca {
       flex: 1;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 12px;
       word-break: break-all;
-      line-height: 1.4;
-      min-height: 1.4em;
+      line-height: 1.45;
+      color: var(--bone);
     }
 
     button.copy {
       appearance: none;
-      border: 1px solid var(--ink);
-      background: var(--ink);
-      color: var(--paper);
-      font-family: inherit;
+      border: 1px solid var(--pumpkin);
+      background: var(--pumpkin);
+      color: var(--night);
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 11px;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       padding: 8px 10px;
       cursor: pointer;
       white-space: nowrap;
+      font-weight: 600;
     }
 
-    button.copy:hover { opacity: 0.82; }
-    button.copy.ok { background: transparent; color: var(--ink); }
+    button.copy:hover { filter: brightness(1.08); }
+    button.copy.ok {
+      background: transparent;
+      color: var(--pumpkin);
+    }
 
     .links {
-      margin-top: 22px;
+      margin-top: 18px;
       display: flex;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
       justify-content: center;
+      width: 100%;
+      max-width: 520px;
     }
 
     .btn {
       display: inline-block;
       text-decoration: none;
-      color: var(--paper);
-      background: var(--ink);
-      padding: 12px 18px;
-      font-size: 12px;
-      letter-spacing: 0.16em;
+      color: var(--night);
+      background: var(--pumpkin);
+      padding: 12px 14px;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      font-weight: 600;
+      flex: 1 1 140px;
+      text-align: center;
     }
 
     .btn.ghost {
       background: transparent;
-      color: var(--ink);
-      border: 1px solid var(--ink);
+      color: var(--bone);
+      border: 1px solid #6b3d16;
     }
 
     footer {
       margin-top: auto;
       padding-top: 36px;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 10px;
-      letter-spacing: 0.08em;
-      color: #7a6648;
+      letter-spacing: 0.1em;
+      color: #7a5a38;
       text-align: center;
     }
 
@@ -207,17 +260,18 @@
 <body>
   <div class="wrap">
     <header>
-      <div class="brand">Pepe on Bag</div>
+      <div class="brand">Oct 31 · on-chain</div>
       <a class="tg" href="https://t.me/pepeonbag" target="_blank" rel="noopener">telegram</a>
     </header>
 
     <div class="hero">
-      <img src="pepe-bag.jpg" alt="Person in a paper bag with Sharpie Pepe drawn on it" />
+      <img src="pepe-bag.jpg" alt="Halloween paper bag with Sharpie Pepe" />
+      <div class="badge">no eye holes</div>
     </div>
 
-    <h1>PEPE ON BAG</h1>
-    <p class="tag">The bag is the costume. The bag is the coin.</p>
-    <p class="hint">Halloween look. Meme-coin moment. Same brown bag. No eye holes. Don't overthink it.</p>
+    <h1>PEPE<br>ON BAG</h1>
+    <p class="sub">The costume is a paper bag. The trick is the coin.</p>
+    <p class="hint">Wear it on Halloween. Hold it after.</p>
 
     <div class="ca-box">
       <div class="ca-label">Contract</div>
@@ -228,15 +282,19 @@
     </div>
 
     <div class="links">
-      <a class="btn" href="https://t.me/pepeonbag" target="_blank" rel="noopener">Join Telegram</a>
+      <a class="btn" href="https://t.me/pepeonbag" target="_blank" rel="noopener">Telegram</a>
+      <a class="btn ghost" id="pump" href="#" target="_blank" rel="noopener">Pump</a>
+      <a class="btn ghost" id="dex" href="#" target="_blank" rel="noopener">Dex</a>
     </div>
 
-    <footer>not financial advice · just a bag</footer>
+    <footer>not financial advice · just a bag with a face on it</footer>
   </div>
 
   <script>
     const caEl = document.getElementById("ca");
     const copyBtn = document.getElementById("copy");
+    const pumpLink = document.getElementById("pump");
+    const dexLink = document.getElementById("dex");
     let currentCa = "";
 
     function firstAddress(text) {
@@ -252,6 +310,10 @@
     function setCa(value) {
       currentCa = (value || "").trim();
       caEl.textContent = currentCa || "drop the address in ca.txt";
+      if (currentCa && currentCa !== "TBA") {
+        pumpLink.href = "https://pump.fun/coin/" + currentCa;
+        dexLink.href = "https://dexscreener.com/solana/" + currentCa;
+      }
     }
 
     fetch("ca.txt", { cache: "no-store" })
