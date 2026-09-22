@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PEPE ON BAG</title>
+  <meta name="description" content="The bag is the costume. The bag is the coin. Halloween, but make it on-chain." />
+  <meta property="og:title" content="PEPE ON BAG" />
+  <meta property="og:description" content="Wear the bag. Don't look through it. Join the telegram." />
+  <meta property="og:image" content="pepe-bag.jpg" />
+  <meta name="theme-color" content="#e8d4a8" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👜</text></svg>" />
+  <style>
+    :root {
+      --cream: #ead7b0;
+      --cream-deep: #dcc191;
+      --kraft: #c4a06a;
+      --paper: #f4e6c4;
+      --ink: #16120c;
+      --ink-soft: #3a3226;
+      --bag: #b08958;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      min-height: 100%;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "Courier New", Courier, ui-monospace, monospace;
+    }
+
+    body {
+      background:
+        radial-gradient(1200px 600px at 50% -10%, rgba(255, 244, 214, 0.7), transparent 55%),
+        var(--cream);
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 18px 18px 48px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .tg {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--ink);
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+
+    .tg:hover { opacity: 0.65; }
+
+    .hero {
+      width: min(92vw, 560px);
+      aspect-ratio: 1 / 1;
+      margin: 8px 0 22px;
+      position: relative;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 18%;
+      display: block;
+      border: 1px solid #8b6b3d;
+      box-shadow: 0 18px 40px rgba(80, 50, 10, 0.18);
+      background: var(--cream-deep);
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(28px, 7vw, 48px);
+      letter-spacing: 0.04em;
+      text-align: center;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .tag {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 36em;
+    }
+
+    .hint {
+      margin-top: 8px;
+      text-align: center;
+      font-size: 12px;
+      color: #6b5738;
+      max-width: 34em;
+    }
+
+    .ca-box {
+      margin-top: 26px;
+      width: 100%;
+      max-width: 560px;
+      border: 1px dashed #8b6b3d;
+      background: rgba(244, 230, 196, 0.55);
+      padding: 14px 14px 12px;
+    }
+
+    .ca-label {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #6b5738;
+      margin-bottom: 8px;
+    }
+
+    .ca-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #ca {
+      flex: 1;
+      font-size: 12px;
+      word-break: break-all;
+      line-height: 1.4;
+      min-height: 1.4em;
+    }
+
+    button.copy {
+      appearance: none;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+      font-family: inherit;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 8px 10px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    button.copy:hover { opacity: 0.82; }
+    button.copy.ok { background: transparent; color: var(--ink); }
+
+    .links {
+      margin-top: 22px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--paper);
+      background: var(--ink);
+      padding: 12px 18px;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--ink);
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 36px;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: #7a6648;
+      text-align: center;
+    }
+
+    @media (max-width: 520px) {
+      .hero { width: 100%; }
+      .ca-row { flex-direction: column; align-items: stretch; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">Pepe on Bag</div>
+      <a class="tg" href="https://t.me/pepeonbag" target="_blank" rel="noopener">telegram</a>
+    </header>
+
+    <div class="hero">
+      <img src="pepe-bag.jpg" alt="Person in a paper bag with Sharpie Pepe drawn on it" />
+    </div>
+
+    <h1>PEPE ON BAG</h1>
+    <p class="tag">The bag is the costume. The bag is the coin.</p>
+    <p class="hint">Halloween look. Meme-coin moment. Same brown bag. No eye holes. Don't overthink it.</p>
+
+    <div class="ca-box">
+      <div class="ca-label">Contract</div>
+      <div class="ca-row">
+        <div id="ca">loading…</div>
+        <button class="copy" type="button" id="copy">copy</button>
+      </div>
+    </div>
+
+    <div class="links">
+      <a class="btn" href="https://t.me/pepeonbag" target="_blank" rel="noopener">Join Telegram</a>
+    </div>
+
+    <footer>not financial advice · just a bag</footer>
+  </div>
+
+  <script>
+    const caEl = document.getElementById("ca");
+    const copyBtn = document.getElementById("copy");
+    let currentCa = "";
+
+    function firstAddress(text) {
+      const lines = String(text || "").split(/\r?\n/);
+      for (const raw of lines) {
+        const line = raw.trim();
+        if (!line || line.startsWith("#")) continue;
+        return line;
+      }
+      return "";
+    }
+
+    function setCa(value) {
+      currentCa = (value || "").trim();
+      caEl.textContent = currentCa || "drop the address in ca.txt";
+    }
+
+    fetch("ca.txt", { cache: "no-store" })
+      .then((res) => {
+        if (!res.ok) throw new Error("missing ca.txt");
+        return res.text();
+      })
+      .then((text) => setCa(firstAddress(text)))
+      .catch(() => setCa("TBA"));
+
+    copyBtn.addEventListener("click", async () => {
+      if (!currentCa || currentCa === "TBA") return;
+      try {
+        await navigator.clipboard.writeText(currentCa);
+      } catch {
+        const range = document.createRange();
+        range.selectNodeContents(caEl);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        document.execCommand("copy");
+        sel.removeAllRanges();
+      }
+      copyBtn.textContent = "copied";
+      copyBtn.classList.add("ok");
+      setTimeout(() => {
+        copyBtn.textContent = "copy";
+        copyBtn.classList.remove("ok");
+      }, 1400);
+    });
+  </script>
+</body>
+</html>
